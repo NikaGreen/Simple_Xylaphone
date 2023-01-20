@@ -1,0 +1,155 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --desired-size: 40;
+  --coefficient: 1vmin;
+  --size: calc(var(--desired-size) * var(--coefficient));
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+[role="list"] {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  height: calc(1.5 * var(--size));
+  width: calc(2.5 * var(--size));
+  position: relative;
+}
+
+li {
+  width: 10%;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 5px;
+  transition: all 1s ease;
+}
+
+.xylophone:before,
+.xylophone:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: black;
+  height: 15%;
+  width: 100%;
+}
+
+.xylophone:before {
+  top: 10%;
+  transform: rotate(3deg);
+}
+
+.xylophone:after {
+  bottom: 10%;
+  transform: rotate(-3deg);
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 5%;
+  width: 35%;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+button::before {
+  top: 5%;
+}
+
+button::after {
+  bottom: 5%;
+}
+
+li:nth-child(1) button {
+  background-color: red;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+li:nth-child(2) button {
+  background-color: orange;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+li:nth-child(3) button {
+  background-color: yellow;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+li:nth-child(4) button {
+  background-color: lightgreen;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+li:nth-child(5) button {
+  background-color: green;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+li:nth-child(6) button {
+  background-color: skyblue;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+li:nth-child(7) button {
+  background-color: blue;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+li:nth-child(8) button {
+  background-color: purple;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+button.playing {
+  border-color: #ffc600;
+  box-shadow: 0px -10px 20px #ffc600;
+}
+
+h1{
+    font-family: "Poppins",sans-serif;
+    font-size: 100px;
+}
+h1:hover{
+    color: transparent;
+    font-family: "Poppins",sans-serif;
+    font-size: 100px;
+    letter-spacing: 0.05em;
+    background: linear-gradient(
+        #fd004c 16.7%,
+        #fd004c 33.7%,
+        #fe9000 16.7%,
+        #fe9000 33.4%,
+        #fff020 33.4%,
+        #fff020 50.1%,
+        #3edf4b 50.1%,
+        #3edf4b 66.8%,
+        #3363ff 66.8%,
+        #3363ff 83.5%,
+        #b102b7 83.5%
+        );
+        
+    -webkit-text-stroke: 0.04em #000000;
+    -webkit-background-clip: text;
+    background-clip: text;
+    line-height: 1.1em;
+    animation: rainbow 50s linear infinite;
+}
+
+@keyframes rainbow{
+    100%{
+        background-position: 0 30em;
+    }
+}
